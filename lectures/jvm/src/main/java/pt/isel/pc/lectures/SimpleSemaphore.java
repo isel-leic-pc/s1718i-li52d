@@ -9,19 +9,40 @@ public class SimpleSemaphore {
         counter = initial;
     }
 
-    public void acquire() throws InterruptedException {
+    public boolean acquire(long timeout) throws InterruptedException {
         synchronized (mon) {
-            while(counter == 0){
+
+            if(counter > 0){
+                counter -= 1;
+                return true;
+            }
+            if(Timeouts.noWait(timeout)){
+                return false;
+            }
+
+            long t = Timeouts.start(timeout);
+            long remaining = Timeouts.remaining(t);
+
+            while(true){
                 try {
-                    mon.wait();
+                    mon.wait(remaining);
                 }catch (InterruptedException e){
                     if(counter > 0){
                         mon.notify();
                     }
                     throw e;
                 }
+
+                if(counter > 0){
+                    counter -= 1;
+                    return true;
+                }
+
+                remaining = Timeouts.remaining(t);
+                if(Timeouts.isTimeout(remaining)){
+                    return false;
+                }
             }
-            counter -= 1;
         }
     }
 
