@@ -25,8 +25,15 @@ public class SimpleNArySemaphore {
             while(true){
                 mon.wait(remaining);
 
+                if(counter >= units) {
+                    counter -= units;
+                    return true;
+                }
 
-
+                remaining = Timeouts.remaining(t);
+                if(Timeouts.isTimeout(remaining)){
+                    return false;
+                }
             }
         }
     }
