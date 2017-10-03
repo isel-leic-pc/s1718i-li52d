@@ -71,7 +71,7 @@ public class ReaderWriterLock {
                     }
                     wrq.remove(node);
                     if(!isWriting && wrq.isEmpty()) {
-                        insertWaitingReaders();
+                        insertAllWaitingReaders();
                     }
                     throw e;
                 }
@@ -83,7 +83,7 @@ public class ReaderWriterLock {
                 if(Timeouts.isTimeout(remaining)) {
                     wrq.remove(node);
                     if(!isWriting && wrq.isEmpty()) {
-                        insertWaitingReaders();
+                        insertAllWaitingReaders();
                     }
                     return false;
                 }
@@ -105,14 +105,14 @@ public class ReaderWriterLock {
         synchronized (mon) {
             isWriting = false;
             if(!rdq.isEmpty()) {
-               insertWaitingReaders();
+               insertAllWaitingReaders();
             } else if(!wrq.isEmpty()) {
                 insertWaitingWriter();
             }
         }
     }
 
-    private void insertWaitingReaders() {
+    private void insertAllWaitingReaders() {
         if(!rdq.isEmpty()) {
             do {
                 NodeLinkedList.Node<Boolean> reader = rdq.pull();
