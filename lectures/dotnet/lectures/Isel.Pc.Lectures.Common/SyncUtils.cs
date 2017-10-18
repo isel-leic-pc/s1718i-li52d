@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
-namespace Isel.Pc.Common
+namespace Isel.Pc.Lectures.Common
 {
     public static class SyncUtils
     {
-
         public static void Wait(object mlock, object condition, int timeout)
         {
             if(mlock == condition)
