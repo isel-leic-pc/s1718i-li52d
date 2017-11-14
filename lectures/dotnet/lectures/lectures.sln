@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isel.Pc.Lectures.Common.Tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isel.Pc.Lectures.Examples.Tests", "Isel.Pc.Lectures.Examples.Tests\Isel.Pc.Lectures.Examples.Tests.csproj", "{75DCFFE0-C4EA-474A-A03B-A4365EEAF87B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadPool", "ThreadPool\ThreadPool.csproj", "{8B439FFE-9243-4B61-B63B-92C789D8A48A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadPool.Samples", "ThreadPool.Samples\ThreadPool.Samples.csproj", "{F762E5AE-8A80-4C82-9473-13ECBF0A1431}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{75DCFFE0-C4EA-474A-A03B-A4365EEAF87B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75DCFFE0-C4EA-474A-A03B-A4365EEAF87B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75DCFFE0-C4EA-474A-A03B-A4365EEAF87B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B439FFE-9243-4B61-B63B-92C789D8A48A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B439FFE-9243-4B61-B63B-92C789D8A48A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B439FFE-9243-4B61-B63B-92C789D8A48A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B439FFE-9243-4B61-B63B-92C789D8A48A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F762E5AE-8A80-4C82-9473-13ECBF0A1431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F762E5AE-8A80-4C82-9473-13ECBF0A1431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F762E5AE-8A80-4C82-9473-13ECBF0A1431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F762E5AE-8A80-4C82-9473-13ECBF0A1431}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
