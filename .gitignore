@@ -14,3 +14,6 @@ build
 obj
 bin
 packages
+
+.settings
+
